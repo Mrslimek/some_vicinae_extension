@@ -43,8 +43,12 @@ export async function getDunstNotifications(): Promise<Notification[]> {
           category: dunstNotif.category?.data ?? "",
         };
       })
-      // Filter out empty notifications and sort by timestamp (newest first)
-      .filter((notif) => notif.summary || notif.body)
+      // Filter out empty notifications, Satty notifications (case-insensitive), and sort by timestamp (newest first)
+      .filter(
+        (notif) =>
+          (notif.summary || notif.body) &&
+          !notif.appname.toLowerCase().includes("satty"),
+      )
       .sort((a, b) => b.timestamp - a.timestamp);
 
     return notifications;

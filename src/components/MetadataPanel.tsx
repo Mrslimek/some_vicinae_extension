@@ -38,28 +38,6 @@ export const MetadataPanel = memo(function MetadataPanel({
       <Detail.Metadata.Separator />
 
       {/* Battery - Static, check dunstctl history for notifications */}
-      <Detail.Metadata.Label
-        title="Check Notifications"
-        text="Press Cmd+R"
-        icon={Icon.Bell}
-      />
-      <Detail.Metadata.Label
-        title="Refresh"
-        text="Updates notifications"
-        icon={Icon.ArrowClockwise}
-      />
-      <Detail.Metadata.Separator />
-
-      {/* System Info */}
-      <Detail.Metadata.Label
-        title="User"
-        text={process.env.USER || "vick"}
-        icon={Icon.Person}
-      />
-      <Detail.Metadata.Label title="Host" text="hyprland" icon={Icon.Desktop} />
-      <Detail.Metadata.Label title="OS" text="Arch Linux" icon={Icon.Globe01} />
-      <Detail.Metadata.Separator />
-
       {/* Statistics */}
       <Detail.Metadata.TagList title="Statistics">
         <Detail.Metadata.TagList.Item
@@ -73,14 +51,6 @@ export const MetadataPanel = memo(function MetadataPanel({
           }
         />
       </Detail.Metadata.TagList>
-
-      {/* Current View Indicator */}
-      <Detail.Metadata.Separator />
-      <Detail.Metadata.Label
-        title="View"
-        text={selectedTab === "notes" ? "📝 Notes" : "🔔 Notifications"}
-        icon={selectedTab === "notes" ? Icon.NewDocument : Icon.Bell}
-      />
     </Detail.Metadata>
   );
 });
