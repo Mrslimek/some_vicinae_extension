@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/vicinaehq/vicinae/refs/heads/main/extra/schemas/extension.json",
-  "name": "status-check",
-  "title": "status-check",
-  "description": "Shows time, battery, and manages workspace notes",
+  "name": "system-info-dashboard",
+  "title": "System Info Dashboard",
+  "description": "Quick system information dashboard with battery, CPU, memory, storage, and more. Requires fastfetch to be installed on your system.",
   "categories": [],
   "license": "MIT",
   "author": "Mrslimek",
@@ -12,9 +12,9 @@
   "commands": [
     {
       "name": "check",
-      "title": "check",
-      "subtitle": "Huh?",
-      "description": "Huh?",
+      "title": "System Info",
+      "subtitle": "View system information",
+      "description": "Display detailed system information including battery, CPU, memory, storage, and more",
       "mode": "view"
     }
   ],
@@ -32,5 +32,20 @@
     "@biomejs/biome": "2.3.2",
     "@types/node": "^25.0.10",
     "typescript": "^5.9.2"
+  },
+  "systemRequirements": {
+    "description": "This extension requires fastfetch to be installed on your system to gather system information.",
+    "dependencies": [
+      {
+        "name": "fastfetch",
+        "description": "System information tool",
+        "install": {
+          "arch": "sudo pacman -S fastfetch",
+          "debian": "sudo apt install fastfetch",
+          "fedora": "sudo dnf install fastfetch",
+          "generic": "Visit https://github.com/LinusDierheimer/fastfetch#installation for installation instructions"
+        }
+      }
+    ]
   }
 }

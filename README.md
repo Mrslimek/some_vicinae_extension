@@ -1,13 +1,18 @@
-# Workspace Notes Extension
+# System Information Dashboard
 
-A simple Vicinae extension for managing workspace notes with battery and time information.
+A Vicinae extension that displays system information using fastfetch with organized tabs for common and system details.
 
 ## Features
 
-- 📝 Create and manage workspace notes
-- 🔋 View battery status and charge level
-- 🕐 Display current time and date
-- 📊 Track note statistics
+- 📊 **Common Information Tab**: Date, time, battery, OS, kernel, host, uptime
+- 🖥️ **System Information Tab**: CPU, GPU, memory, disk, display, software details
+- 🔄 **Auto-refresh**: Get the latest system information with keyboard shortcut
+- 🎨 **Clean Interface**: Organized and formatted display of system metrics
+
+## Requirements
+
+- `fastfetch` must be installed on your system
+- Install fastfetch: `sudo pacman -S fastfetch` (Arch Linux) or equivalent for your distro
 
 ## Installation
 
@@ -33,8 +38,16 @@ Build the production bundle:
 npm run build
 ```
 
+## Usage
+
+1. Open the extension in Vicinae
+2. View common information like battery, time, and system basics
+3. Switch to System tab for detailed hardware and software information
+4. Press `Cmd+R` to refresh the data
+
 ## Built With
 
 - Vicinae API - Extension framework
+- fastfetch - System information tool
 - TypeScript - Type safety
 - React - UI components
