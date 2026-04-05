@@ -1,9 +1,9 @@
-import { TabbedDashboard } from "./components/TabbedDashboard";
+import { Dashboard } from "./components/Dashboard";
 
 /**
- * Main entry point for the status-check extension
- * Displays a tabbed dashboard with Notes and Notifications
+ * Main entry point for the workspace-notes extension
+ * Displays a dashboard with Notes and battery/time information
  */
-export default function InfiniteDashboard() {
-  return <TabbedDashboard />;
+export default function WorkspaceNotes() {
+  return <Dashboard />;
 }
